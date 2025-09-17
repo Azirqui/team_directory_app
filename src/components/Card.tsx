@@ -1,13 +1,7 @@
 import type { FC } from "react";
+import type { UserType } from "../types";
 
-export type TypeCard = {
-    name: string; 
-    role: 'Junior Developer' | 'UI/UX Designer'; 
-    email:string;
-    avatar:string;
-}
-
-export const Card: FC<TypeCard> = ({name, role, email, avatar}) => {
+export const Card: FC<UserType> = ({name, role, email, avatar, isFavorite}) => {
     return (
         <div>
             <h1>{name}</h1>
