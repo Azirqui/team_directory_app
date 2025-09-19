@@ -1,7 +1,7 @@
 import type { UserType } from "../types";
 type CardType = {
     user: UserType;
-    onFavoriteToggle: (id: number) => void;
+    onFavoriteToggle: (user: UserType) => void;
 }
 
 
@@ -13,7 +13,7 @@ const Card: React.FC<CardType> = ({ user, onFavoriteToggle }) => {
       <p className="text-gray-600">{user.role}</p>
       <p className="text-sm text-gray-500">{user.email}</p>
       <button 
-        onClick={() => onFavoriteToggle(user.id)}
+        onClick={() => onFavoriteToggle(user)}
         className={`mt-4 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
           user.isFavorite ? 'bg-yellow-400 text-black' : 'bg-gray-200 text-gray-700'
         }`}
